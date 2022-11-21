@@ -30,13 +30,11 @@ export default function Router() {
     {
       path: '/',
       element: <MainLayout />,
-      //   children:[
-      //     path:"/test",
-      //     element:
-      //   ]
+      children: [{ path: '/t', element: <MainBody /> }],
     },
   ]);
 }
 
 //layouts
 const MainLayout = Loadable(lazy(() => import('../layouts/MainLayout')));
+const MainBody = Loadable(lazy(() => import('../components/Main')));
